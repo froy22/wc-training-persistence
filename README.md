@@ -30,3 +30,5 @@ The feature packages for this project are the following:
 
 - Post: Demonstrates the typical CRUD operations with simple entities.
 - Book: Demonstrates some common entity relationships. 
+
+Unit tests can be found in `/src/test/java/com/whitecloak/training`.
