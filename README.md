@@ -1,5 +1,5 @@
-# White Cloak Training - Persistence
-Sample project for demonstrating java persistence. 
+# White Cloak Training - Java Persistence
+Sample project for demonstrating Java persistence. 
 
 Postman collection can be found [here](https://www.getpostman.com/collections/66084009cc58d59baad4). 
 
