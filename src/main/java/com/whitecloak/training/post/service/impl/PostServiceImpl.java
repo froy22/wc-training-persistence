@@ -1,11 +1,11 @@
-package com.whitecloak.training.simple.service.impl;
+package com.whitecloak.training.post.service.impl;
 
 import com.whitecloak.training.common.response.PaginatedResource;
-import com.whitecloak.training.simple.persistence.entity.PostEntity;
-import com.whitecloak.training.simple.persistence.repository.PostRepository;
-import com.whitecloak.training.simple.request.PostForm;
-import com.whitecloak.training.simple.response.PostResource;
-import com.whitecloak.training.simple.service.PostService;
+import com.whitecloak.training.post.persistence.entity.PostEntity;
+import com.whitecloak.training.post.persistence.repository.PostRepository;
+import com.whitecloak.training.post.request.PostForm;
+import com.whitecloak.training.post.response.PostResource;
+import com.whitecloak.training.post.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

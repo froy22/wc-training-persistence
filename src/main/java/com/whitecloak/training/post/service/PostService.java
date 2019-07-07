@@ -1,8 +1,8 @@
-package com.whitecloak.training.simple.service;
+package com.whitecloak.training.post.service;
 
 import com.whitecloak.training.common.response.PaginatedResource;
-import com.whitecloak.training.simple.request.PostForm;
-import com.whitecloak.training.simple.response.PostResource;
+import com.whitecloak.training.post.request.PostForm;
+import com.whitecloak.training.post.response.PostResource;
 
 public interface PostService {
 

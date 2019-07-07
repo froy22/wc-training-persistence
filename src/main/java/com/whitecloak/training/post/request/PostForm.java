@@ -1,19 +1,8 @@
-package com.whitecloak.training.simple.persistence.entity;
+package com.whitecloak.training.post.request;
 
-import com.whitecloak.training.common.persistence.entity.BaseEntity;
+public class PostForm {
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-@Table(name = "POST")
-@Entity
-public class PostEntity extends BaseEntity {
-
-    @Column(nullable = false)
     private String title;
-
-    @Column
     private String description;
 
     public String getTitle() {

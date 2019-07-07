@@ -1,9 +1,18 @@
-package com.whitecloak.training.simple.request;
+package com.whitecloak.training.post.response;
 
-public class PostForm {
+public class PostResource {
 
+    private Long id;
     private String title;
     private String description;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

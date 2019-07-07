@@ -1,6 +1,6 @@
-package com.whitecloak.training.simple.persistence.repository;
+package com.whitecloak.training.post.persistence.repository;
 
-import com.whitecloak.training.simple.persistence.entity.PostEntity;
+import com.whitecloak.training.post.persistence.entity.PostEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;

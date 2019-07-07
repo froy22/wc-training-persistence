@@ -1,10 +1,10 @@
-package com.whitecloak.training.simple.controller;
+package com.whitecloak.training.post.controller;
 
 import com.whitecloak.training.common.response.MessageResource;
 import com.whitecloak.training.common.response.PaginatedResource;
-import com.whitecloak.training.simple.request.PostForm;
-import com.whitecloak.training.simple.response.PostResource;
-import com.whitecloak.training.simple.service.PostService;
+import com.whitecloak.training.post.request.PostForm;
+import com.whitecloak.training.post.response.PostResource;
+import com.whitecloak.training.post.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
