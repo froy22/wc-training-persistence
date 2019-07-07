@@ -86,6 +86,6 @@ public class BookServiceImpl implements BookService {
 
     private GenreEntity fetchGenre(Long id) {
         return genreRepository.findOneById(id)
-            .orElseGet(GenreEntity::new);    // An error is usually thrown here
+            .orElseThrow(() -> new ApiException("Genre does not exist."));
     }
 }
