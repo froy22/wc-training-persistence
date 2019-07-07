@@ -1,28 +1,20 @@
 package com.whitecloak.training.simple.persistence.entity;
 
-import javax.persistence.*;
+import com.whitecloak.training.common.persistence.entity.BaseEntity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Table(name = "POST")
 @Entity
-public class PostEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class PostEntity extends BaseEntity {
 
     @Column(nullable = false)
     private String title;
 
     @Column
     private String description;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;

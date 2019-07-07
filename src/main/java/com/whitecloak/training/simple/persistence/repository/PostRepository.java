@@ -1,6 +1,8 @@
 package com.whitecloak.training.simple.persistence.repository;
 
 import com.whitecloak.training.simple.persistence.entity.PostEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,6 +14,8 @@ public interface PostRepository extends org.springframework.data.repository.Repo
     PostEntity save(PostEntity entity);
 
     List<PostEntity> findAll();
+
+    Page<PostEntity> findAll(Pageable pageable);
 
     Optional<PostEntity> findById(Long id);
 

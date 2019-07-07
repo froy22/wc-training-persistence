@@ -1,17 +1,16 @@
 package com.whitecloak.training.simple.service;
 
+import com.whitecloak.training.common.response.PaginatedResource;
 import com.whitecloak.training.simple.request.PostForm;
 import com.whitecloak.training.simple.response.PostResource;
-
-import java.util.List;
 
 public interface PostService {
 
     PostResource create(PostForm form);
 
-    List<PostResource> fetchAll();
+    PaginatedResource<PostResource> showPaginated(Integer pageNumber, Integer size);
 
-    PostResource fetchOne(Long id);
+    PostResource showOne(Long id);
 
     PostResource update(Long id, PostForm form);
 
