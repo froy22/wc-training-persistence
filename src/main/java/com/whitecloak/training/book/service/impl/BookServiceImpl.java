@@ -83,7 +83,7 @@ public class BookServiceImpl implements BookService {
         return entity;
     }
 
-    private GenreEntity fetchGenre(long id) {
+    private GenreEntity fetchGenre(Long id) {
         return genreRepository.findOneById(id)
             .orElseGet(GenreEntity::new);    // An error is usually thrown here
     }

@@ -9,7 +9,7 @@ import java.util.Optional;
 @Repository
 public interface GenreRepository extends org.springframework.data.repository.Repository<GenreEntity, Long> {
 
-    Optional<GenreEntity> findOneById(long id);
+    Optional<GenreEntity> findOneById(Long id);
 
     List<GenreEntity> findAll();
 }
