@@ -1,20 +1,12 @@
-package com.whitecloak.training.post.persistence.entity;
+package com.whitecloak.training.book.request;
 
-import com.whitecloak.training.common.persistence.entity.BaseEntity;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+public class BookForm {
 
-@Table(name = "POSTS")
-@Entity
-public class PostEntity extends BaseEntity {
-
-    @Column(nullable = false)
     private String title;
-
-    @Column
     private String description;
+    private Set<Long> genreIds;
 
     public String getTitle() {
         return title;
@@ -30,5 +22,13 @@ public class PostEntity extends BaseEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<Long> getGenreIds() {
+        return genreIds;
+    }
+
+    public void setGenreIds(Set<Long> genreIds) {
+        this.genreIds = genreIds;
     }
 }
