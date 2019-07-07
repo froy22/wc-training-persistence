@@ -1,0 +1,18 @@
+spring:
+  jackson:
+    property-naming-strategy: LOWER_CAMEL_CASE
+
+  ## Database Configuration
+
+  datasource:
+    url: jdbc:h2:mem:test_db
+    driver-class-name: org.h2.Driver
+    username: whitecloak
+    password: whitecloak
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+  h2:
+    console:
+      enabled: true
