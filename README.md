@@ -29,4 +29,4 @@ feature
 The feature packages for this project are the following:
 
 - Post: Demonstrates the typical CRUD operations with simple entities.
-- Book: Demonstrates common entity relationships. 
+- Book: Demonstrates some common entity relationships. 
