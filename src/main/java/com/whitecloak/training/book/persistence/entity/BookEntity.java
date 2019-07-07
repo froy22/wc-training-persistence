@@ -3,6 +3,7 @@ package com.whitecloak.training.book.persistence.entity;
 import com.whitecloak.training.common.persistence.entity.BaseEntity;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Table(name = "BOOKS")
@@ -17,7 +18,7 @@ public class BookEntity extends BaseEntity {
     private String description;
 
     @ManyToMany
-    private Set<GenreEntity> genres;
+    private Set<GenreEntity> genres = new HashSet<>();
 
     public String getTitle() {
         return title;
