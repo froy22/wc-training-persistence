@@ -28,12 +28,3 @@ dist/
 nbdist/
 .nb-gradle/
 /bin/
-
-### Config Files
-src/main/resources/profiles/staging/
-src/main/resources/profiles/prod/
-/fund_transfer/
-
-## vim
-*.swp
-*.swo
