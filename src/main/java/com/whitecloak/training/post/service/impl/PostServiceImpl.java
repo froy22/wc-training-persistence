@@ -52,14 +52,14 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public PostResource showOne(@PathVariable Long id) {
-        PostEntity entity = postRepository.findById(id)
+        PostEntity entity = postRepository.findOneById(id)
             .orElseThrow(() -> new ApiException("Post does not exist."));
         return mapToResource(entity);
     }
 
     @Override
     public PostResource update(Long id, PostForm form) {
-        PostEntity entity = postRepository.findById(id)
+        PostEntity entity = postRepository.findOneById(id)
             .orElseThrow(() -> new ApiException("Post does not exist"));
 
         entity.setTitle(form.getTitle());
@@ -75,7 +75,7 @@ public class PostServiceImpl implements PostService {
     }
 
     private PaginatedResource<PostResource> paginateAll(Integer pageNumber, Integer size) {
-        Pageable pageable = buildDefaultPageable(pageNumber - 1, size); // Page starts at zero here
+        Pageable pageable = buildDefaultPageable(pageNumber - 1, size); // Pageable page number starts at zero here
         Page<PostEntity> page = postRepository.findAll(pageable);
         List<PostResource> resources = page.getContent()
             .stream()
@@ -103,8 +103,7 @@ public class PostServiceImpl implements PostService {
         return new PaginatedResource<>(resources);
     }
 
-    private PostResource mapToResource(PostEntity entity)
-    {
+    private PostResource mapToResource(PostEntity entity) {
         PostResource resource = new PostResource();
         resource.setId(entity.getId());
         resource.setTitle(entity.getTitle());

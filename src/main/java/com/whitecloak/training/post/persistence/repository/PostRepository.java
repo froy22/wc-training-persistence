@@ -17,7 +17,7 @@ public interface PostRepository extends org.springframework.data.repository.Repo
 
     Page<PostEntity> findAll(Pageable pageable);
 
-    Optional<PostEntity> findById(Long id);
+    Optional<PostEntity> findOneById(Long id);
 
     void deleteById(Long id);
 }
