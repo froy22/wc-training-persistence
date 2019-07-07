@@ -7,6 +7,7 @@ import com.whitecloak.training.book.persistence.repository.ReviewRepository;
 import com.whitecloak.training.book.request.ReviewForm;
 import com.whitecloak.training.book.response.ReviewResource;
 import com.whitecloak.training.book.service.ReviewService;
+import com.whitecloak.training.common.error.ApiException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,7 +52,7 @@ public class ReviewServiceImpl implements ReviewService {
 
     private ReviewEntity mapToEntity(ReviewForm form, Long bookId) {
         BookEntity book = bookRepository.findOneById(bookId)
-            .orElseGet(BookEntity::new);    // An exception is usually thrown here
+            .orElseThrow(() -> new ApiException("Book does not exist."));
 
         ReviewEntity entity = new ReviewEntity();
         entity.setTitle(form.getTitle());

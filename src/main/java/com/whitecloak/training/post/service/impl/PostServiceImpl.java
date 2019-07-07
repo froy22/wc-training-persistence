@@ -1,5 +1,6 @@
 package com.whitecloak.training.post.service.impl;
 
+import com.whitecloak.training.common.error.ApiException;
 import com.whitecloak.training.common.response.PaginatedResource;
 import com.whitecloak.training.post.persistence.entity.PostEntity;
 import com.whitecloak.training.post.persistence.repository.PostRepository;
@@ -17,7 +18,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static java.util.Collections.emptyList;
 import static java.util.Objects.isNull;
 
 @Service
@@ -44,7 +44,7 @@ public class PostServiceImpl implements PostService {
         }
 
         if (hasInvalidParams(pageNumber, size)) {
-            return new PaginatedResource<>(emptyList(), 0, 0);  // An exception is usually thrown here
+            throw new ApiException("Invalid pagination parameters found.");
         }
 
         return paginateAll(pageNumber, size);
@@ -53,14 +53,14 @@ public class PostServiceImpl implements PostService {
     @Override
     public PostResource showOne(@PathVariable Long id) {
         PostEntity entity = postRepository.findById(id)
-            .orElseGet(PostEntity::new);    // An exception is usually thrown if the entity is not found
+            .orElseThrow(() -> new ApiException("Post does not exist."));
         return mapToResource(entity);
     }
 
     @Override
     public PostResource update(Long id, PostForm form) {
         PostEntity entity = postRepository.findById(id)
-            .orElseGet(PostEntity::new);    // An exception is usually thrown if the entity is not found
+            .orElseThrow(() -> new ApiException("Post does not exist"));
 
         entity.setTitle(form.getTitle());
         entity.setDescription(form.getDescription());
@@ -103,7 +103,8 @@ public class PostServiceImpl implements PostService {
         return new PaginatedResource<>(resources);
     }
 
-    private PostResource mapToResource(PostEntity entity) {
+    private PostResource mapToResource(PostEntity entity)
+    {
         PostResource resource = new PostResource();
         resource.setId(entity.getId());
         resource.setTitle(entity.getTitle());

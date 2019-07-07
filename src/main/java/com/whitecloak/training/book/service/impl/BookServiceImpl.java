@@ -8,6 +8,7 @@ import com.whitecloak.training.book.request.BookForm;
 import com.whitecloak.training.book.response.BookResource;
 import com.whitecloak.training.book.response.GenreResource;
 import com.whitecloak.training.book.service.BookService;
+import com.whitecloak.training.common.error.ApiException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +47,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookResource showOne(Long id) {
         BookEntity entity = bookRepository.findOneById(id)
-            .orElseGet((BookEntity::new));  // An exception is usually thrown here
+            .orElseThrow(() -> new ApiException("Book does not exist."));
         return mapToResource(entity);
     }
 
